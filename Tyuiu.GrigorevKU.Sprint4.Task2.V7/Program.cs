@@ -3,20 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tyuiu.GrigorevKU.Sprint4.Task1.V7.Lib;
-namespace Tyuiu.GrigorevKU.Sprint4.Task1.V7
+using Tyuiu.GrigorevKU.Sprint4.Task2.V7.Lib;
+namespace Tyuiu.GrigorevKU.Sprint4.Task2.V7
 {
     class Program
     {
         static void Main(string[] args)
         {
             DataService ds = new DataService();
+            Random rnd = new Random();
 
             Console.Title = "Спринт #4| Выполнил: Григорьев К. Ю. | ИИПб-23-2";
             Console.WriteLine("***************************************************************************");
             Console.WriteLine("* Спринт #4                                                               *");
-            Console.WriteLine("* Тема: Одномерные массивы (ввод с клавиатуры)                            *");
-            Console.WriteLine("* Задание #1                                                              *");
+            Console.WriteLine("* Тема: Одномерные массивы (генератор случайных чисел)                    *");
+            Console.WriteLine("* Задание #2                                                              *");
             Console.WriteLine("* Вариант #7                                                              *");
             Console.WriteLine("* Выполнил Григорьев К. Ю. | ИИПб-23-2                                    *");
             Console.WriteLine("***************************************************************************");
@@ -28,20 +29,19 @@ namespace Tyuiu.GrigorevKU.Sprint4.Task1.V7
             Console.WriteLine("***************************************************************************");
 
 
-            int len;
-            Console.Write("Введите количество элементов в массиве: ");
-            len = Convert.ToInt32(Console.ReadLine());
+            int len = 12;
+            Console.Write("Количество элементов в массиве: " + len);
 
             int[] numsArray = new int[len];
 
-            for (int i = 0; i <= numsArray.Length -1; i++)
-            {
-                Console.WriteLine("Введите значение " + i + " элемента массива: ");
-                numsArray[i] = Convert.ToInt32(Console.ReadLine());
-            }
             Console.WriteLine();
+            for (int i = 0; i <= numsArray.Length - 1; i++)
+            {
+                numsArray[i] = rnd.Next(4, 10);
+            }
+            
             Console.WriteLine("Массив: ");
-            for (int i =0; i <= numsArray.Length -1; i++)
+            for (int i = 0; i <= numsArray.Length - 1; i++)
             {
                 Console.Write(numsArray[i] + "\t");
             }
